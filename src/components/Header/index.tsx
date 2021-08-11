@@ -10,6 +10,7 @@ export function Header(){
           <a href="#" className={styles.active}>Home</a>
           <a href="#">Posts</a>
         </nav>
+        
         <SignInButton />
       </div>
     </header>
