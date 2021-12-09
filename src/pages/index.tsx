@@ -39,7 +39,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const price = await stripe.prices.retrieve("price_1JPYKBLEYV1YF9jALn40Ngiu");
   const product = {
     priceId: price.id,
-    amount: price.unit_amount / 100,
+    amount: new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(price.unit_amount / 100),
   };
   return {
     props: {
