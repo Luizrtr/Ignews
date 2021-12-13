@@ -16,14 +16,18 @@ export default NextAuth({
     // ...add more providers here
   ],
 
-  // A database is optional, but required to persist accounts in a database
-  database: process.env.DATABASE_URL,
-
   callbacks: {
-    async signIn({ user, account, profile }) {
-      const { email } = user;
-      await fauna.query(q.Create(q.Collection("users"), { data: { email } }));
-      return true;
+    async signIn(user, account, profile) {
+      // await fauna.query(q.Create(q.Collection("users"), { data: { email } }));
+      // return true;
+      try {
+        const { email } = user;
+        await fauna.query(q.Create(q.Collection("users"), { data: { email } }));
+        console.log(user);
+        return true;
+      } catch {
+        return false;
+      }
     },
   },
 });
