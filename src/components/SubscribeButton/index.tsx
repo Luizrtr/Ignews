@@ -1,6 +1,6 @@
 import { useSession, signIn } from "next-auth/client";
 import { api } from "../../services/api";
-import { getStripeJS } from "../../services/stripe-js";
+import { getStripeJs } from "../../services/stripe-js";
 
 import styles from "./styles.module.scss";
 
@@ -26,7 +26,7 @@ export function SubscribeButton({ priceId }: SubscrisbeButtonProps) {
       const response = await api.post("/subscribe");
       const { sessionId } = response.data;
 
-      const stripe = await getStripeJS();
+      const stripe = await getStripeJs();
 
       await stripe.redirectToCheckout({ sessionId });
     } catch (err) {

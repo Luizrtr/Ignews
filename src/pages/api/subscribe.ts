@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/client";
 
@@ -6,21 +7,23 @@ import { stripe } from "../../services/stripe";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     const session = await getSession({ req });
+
     const stripeCustomer = await stripe.customers.create({
       email: session.user.email,
     });
-    const StripeCheckoutSession = await stripe.checkout.sessions.create({
+
+    const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: stripeCustomer.id,
       payment_method_types: ["card"],
       billing_address_collection: "required",
-      line_items: [{ price: "price_1JPYKBLEYV1YF9jALn40Ngiu", quantity: 1 }],
+      line_items: [{ price: "price_1K7L8wLEYV1YF9jA722fsysf", quantity: 1 }],
       mode: "subscription",
       allow_promotion_codes: true,
       success_url: process.env.STRIPE_SUCCESS_URL,
       cancel_url: process.env.STRIPE_CANCEL_URL,
     });
-
-    return res.status(200).json({ sessionId: StripeCheckoutSession.id });
+    console.log("oi");
+    return res.status(200).json({ sessionId: stripeCheckoutSession.id });
   } else {
     res.setHeader("Allow", "POST");
     res.status(405).end("Method not allowed");
