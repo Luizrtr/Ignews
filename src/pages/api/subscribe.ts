@@ -22,6 +22,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       q.Get(q.Match(q.Index("user_by_email"), q.Casefold(session.user.email)))
     );
 
+    // let customerId = "cus_KnHgtUVfGP41fg";
     let customerId = user.data.stripe_customer_id;
 
     if (!customerId) {
