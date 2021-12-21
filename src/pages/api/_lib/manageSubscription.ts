@@ -30,7 +30,6 @@ export async function saveSubscription(
       q.Create(q.Collection("subscriptions"), { data: subscriptionData })
     );
   } else {
-    console.log(subscriptionData);
     await fauna.query(
       q.Replace(
         q.Select(
