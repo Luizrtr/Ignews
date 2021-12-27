@@ -9,7 +9,7 @@ export default function Posts() {
       </Head>
       <main className={styles.container}>
         <div className={styles.posts}>
-          <a>
+          <a href="#">
             <time>12 de março de 2021</time>
             <strong>What is Lorem Ipsum?</strong>
             <p>
