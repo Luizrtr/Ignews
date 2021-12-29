@@ -1,9 +1,10 @@
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
-import { Head } from "next/document";
+import Head from "next/head";
 import { RichText } from "prismic-dom";
 import { getPrismicClient } from "../../services/prismic";
 
+import styles from "./post.module.scss";
 interface PostProps {
   post: {
     slug: string;
@@ -12,7 +13,7 @@ interface PostProps {
     updated: string;
   };
 }
-
+0;
 export default function Post({ post }: PostProps) {
   return (
     <>
@@ -20,12 +21,15 @@ export default function Post({ post }: PostProps) {
         <title>{post.title} | Ignews </title>
       </Head>
 
-      <main>
-        <article>
+      <main className={styles.container}>
+        <article className={styles.post}>
           <h1>{post.title}</h1>
           <time>{post.updated}</time>
         </article>
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: post.content }}
+          className={styles.postContent}
+        />
       </main>
     </>
   );
