@@ -19,24 +19,23 @@
     margin-top: 1.5rem;
     display: block;
   }
+}
+.postContent {
+  margin-top: 2rem;
+  line-height: 2rem;
+  font-size: 1.25rem;
+  color: var(--gray-100);
 
-  .postContent {
-    margin-top: 2rem;
-    line-height: 2rem;
-    font-size: 1.25rem;
-    color: var(--gray-100);
+  p,
+  ul {
+    margin: 1.5rem 0;
+  }
 
-    p,
-    ul {
-      margin: 1.5rem 0;
-    }
+  ul {
+    padding-left: 1.5rem;
+  }
 
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
+  li {
+    margin: 0.5rem 0;
   }
 }
