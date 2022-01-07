@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { ActiveLink } from ".";
+import { ActiveLink } from "../../components/ActveLink";
 
 jest.mock("next/router", () => {
   return {
