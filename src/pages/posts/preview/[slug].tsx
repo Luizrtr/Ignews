@@ -13,7 +13,7 @@ interface PostPreviewProps {
     slug: string;
     title: string;
     content: string;
-    updated: string;
+    updatedAt: string;
   };
 }
 
@@ -34,7 +34,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
       <main className={styles.container}>
         <article className={styles.post}>
           <h1>{post.title}</h1>
-          <time>{post.updated}</time>
+          <time>{post.updatedAt}</time>
         </article>
         <div
           dangerouslySetInnerHTML={{ __html: post.content }}
