@@ -85,7 +85,8 @@ $ yarn dev
 ## :framed_picture: Imagens ##
 
 <h1 align="center">
-    <img alt = "Web app" src = "./.github/image-01.png" width = "1000px" height = "500px" />
+    <img alt = "Web app" src = "./.github/ignews-1.gif" width = "500px" height = "300px" />
+    <img alt = "Web app" src = "./.github/ignews-2.gif" width = "500px" height = "300px" />
 </h1>
 
 
