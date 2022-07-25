@@ -41,7 +41,7 @@
 ## :dart: About ##
 
 The project ig.news is blog where users they can access to content in accordance with a status in yout signature.<br>
-The blog it has a purchase system integrated with Stripe, and after  user to do payment, your signature will be active and ready for read of content complete. Case of user not want choose signature, he will have access limited to content of post. And all data required for to do signature verification
+The blog it has a purchase system integrated with Stripe and after  user to do payment, your signature will be active and ready for read of content complete. Case of user not want choose signature, he will have access limited to content of post. And all data required for to do signature verification
 or data of users, They are saves in database FaunaDB.
 <br>
 <br>
